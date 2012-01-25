@@ -22,6 +22,12 @@ class modelSetup extends modelSample
 					pespn_list_limit='".$aData['pg_espn_display_limit']."'";
 		return $this->query($sQuery);
 	}
+	public function getResultCount($aOption)
+	{
+		$sQuery = "SELECT count(*) as count FROM espnnews_settings";
+		$mResult = $this->query($sQuery);
+		return $mResult[0]['count'];
+	}
 	
 	
 }

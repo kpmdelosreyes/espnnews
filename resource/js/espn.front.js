@@ -1,12 +1,8 @@
-var espnnews = {
+var frontPageDisplay = {
 
 	getNews: function(cat)
 	{	
-		var pNode = $("#PLUGIN_Espn");
-		var pgUrl = $("#pg_espn_pluginurl").val();
-		var sUrl = $('#pg_espn_ajaxurl').val();
-		var sTpl = $('#pg_espn_template').val();
-		
+	
 		var prev_on = $('.pg_espn_nav').find('.on');
 		prev_on.attr('class', 'off');
 
@@ -18,10 +14,16 @@ var espnnews = {
 		var isLoading = $('#pg_espn_ajaxloader1').is(':visible');
 		if(isLoading) return false;
 
-		$('.pg_espn_content_wrap').append('<div id="pg_espn_ajaxloader1"><img src="'+pgUrl+'/images/ajax-loader.gif" /></div>');
+		$('.pg_espn_content_wrap').append('<div id="pg_espn_ajaxloader1"><img src="../_sdk/img/espnnews/ajax-loader.gif" /></div>');
 
-		var mData = { url : sUrl, ctgry : cat  }
-		PLUGIN.post(pNode, mData , 'custom' , 'json' , PLUGIN_Espn_front.ajaxCallBackJson);
+		$.ajax({
+			url: usbuilder.getUrl("apiContentFront"),
+			type: "POST",
+			data : {ctgry : cat}
+		}).done(function(data) { 	
+			frontPageDisplay.ajaxCallBackJson(data.Data);
+        });
+
 	
 	},
 
@@ -30,7 +32,7 @@ var espnnews = {
 		var news = result.news;
 		var limit = $('#pg_espn_list_limit').val();
 		var str = "";
-		var pgUrl = $("#pg_espn_pluginurl").val();
+		
 		$('#pg_espn_ajaxloader1').remove();
 		$('.pg_espn_content_wrap').append('<ul class="pg_espn_contentnews">');
 		
@@ -38,8 +40,8 @@ var espnnews = {
 
                     str += '<li>';
                     str += '<span style="cursor:pointer;">';
-                    str += '<img src="'+pgUrl+'/images/pg_tree_p.gif" alt="Plus Sign" onclick="PLUGIN_Espn_front.plus(this);"/>';
-                    str += '<img src="'+pgUrl+'/images/pg_tree_m.gif" alt="Minus Sign" style="display:none" onclick="PLUGIN_Espn_front.minus(this);" />';
+                    str += '<img src="../_sdk/img/espnnews/pg_tree_p.gif" alt="Plus Sign" onclick="frontPageDisplay.plus(this);"/>';
+                    str += '<img src="../_sdk/img/espnnews/pg_tree_m.gif" alt="Minus Sign" style="display:none" onclick="frontPageDisplay.minus(this);" />';
                     str += '</span>';
                     str += '<div class="pg_content">';
                     str += '<p class="pg_title"><a href="' + val.link + '" target="_blank">' + val.title + '</a></p>';
@@ -49,7 +51,7 @@ var espnnews = {
                     str += '</p></div></li>';
 
                    
-                    if(limit == key+1) return false;
+                if(limit == key+1) return false;
 		});
 			
 		$('.pg_espn_contentnews').append(str);
@@ -72,7 +74,6 @@ var espnnews = {
 
 };
 
-jQuery.noConflict();
-jQuery(document).ready(function($){
-
+$(document).ready(function(){
+	
 });

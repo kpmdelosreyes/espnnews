@@ -4,7 +4,7 @@ class apiContentFront extends Controller_Api
 	protected function post($aArgs)
 	{
 		require_once 'util/feed.php';
-		$oFeed = new BbcnewsUtilFeed();
+		$oFeed = new EspnUtilFeed();
 		$aCategory = $oFeed->category();
 
 		foreach($aCategory as $key=>$val) {
@@ -20,6 +20,6 @@ class apiContentFront extends Controller_Api
 		$aResponse = array('news' => $aNews);
 		
 		return $aResponse;
-				
+		
 	}
 }
