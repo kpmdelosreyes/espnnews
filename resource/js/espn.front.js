@@ -1,8 +1,21 @@
+$(document).ready(function(){
+	var height = $("#pg_espn").parent().height();
+	var test = $(".pg_espn_content_wrap").parent().parent().height();
+    var realHeight = test - 50;
+    
+	$(".pg_espn_content_wrap").css("height", realHeight);
+	$(".pg_espn_content_wrap").css("overflow-x", "hidden");
+	$(".pg_espn_content_wrap").css("overflow-y","auto");
+	
+	//$(".on, .off").css("width" , "80px");
+});
+
+
 var frontPageDisplay = {
 
 	getNews: function(cat)
 	{	
-	
+		
 		var prev_on = $('.pg_espn_nav').find('.on');
 		prev_on.attr('class', 'off');
 
@@ -13,7 +26,8 @@ var frontPageDisplay = {
 
 		var isLoading = $('#pg_espn_ajaxloader1').is(':visible');
 		if(isLoading) return false;
-
+		var test = $(".pg_espn_content_wrap").parent().parent().height();
+		var realHeight = test - 50;
 		$('.pg_espn_content_wrap').append('<div id="pg_espn_ajaxloader1"><img src="../_sdk/img/espnnews/ajax-loader.gif" /></div>');
 
 		$.ajax({
@@ -47,8 +61,8 @@ var frontPageDisplay = {
                     str += '<p class="pg_title"><a href="' + val.link + '" target="_blank">' + val.title + '</a></p>';
                     str += '<span class="pg_content_date espn_datepost">'+val.date+'</span>';
                     str += '<p class="pg_toggle_content" style="display:none;">	';
-                    str += val.description+'...<a href="'+val.link+'" target="_blank" class="pg_more">more</a>'
-                    str += '</p></div></li>';
+                    str += val.description+'...'
+                    str += '</p></div><p class="pg_more"><a href="'+val.link+'" target="_blank" class="link01">more</a></p></li>';
 
                    
                 if(limit == key+1) return false;
@@ -74,6 +88,6 @@ var frontPageDisplay = {
 
 };
 
-$(document).ready(function(){
-	
-});
+
+
+
