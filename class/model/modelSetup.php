@@ -4,7 +4,7 @@ class modelSetup extends modelSample
 	public function getData()
 	{
 		$sQuery = "SELECT * FROM espnnews_settings";
-		return $this->query($sQuery);
+		return $this->query($sQuery, "row");
 	}
 	
 	public function insertContents($aData)

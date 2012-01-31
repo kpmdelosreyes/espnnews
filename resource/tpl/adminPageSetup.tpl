@@ -35,7 +35,7 @@
         <tr>
                 <th><label for="show_html_value">Shows Rows</label></th>
                 <td>
-                        <span class="neccesary">*</span> <input id="text" name="pg_espn_display_limit" style="width:20px;" type="text" fw-filter="isFill&isNumber" fw-label="pg_espn_display_limit" maxlength="2" value="" />
+                        <span class="neccesary">*</span> <input id="text" name="pg_espn_display_limit" style="width:20px;" type="text" fw-filter="isFill&isNumberRange[1][10]" fw-label="pg_espn_display_limit" maxlength="2" value="" />
                 </td>
         </tr>
         </table>
