@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	/* User Input height */
+	
 	var height = $("#pg_espn").parent().height();
 	var test = $(".pg_espn_content_wrap").parent().parent().height();
-    var realHeight = test - 50;
-    
+    var realHeight = test - 40;
+
 	$(".pg_espn_content_wrap").css("height", realHeight);
 	$(".pg_espn_content_wrap").css("overflow-x", "hidden");
 	$(".pg_espn_content_wrap").css("overflow-y","auto");

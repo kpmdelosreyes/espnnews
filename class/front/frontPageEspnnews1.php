@@ -27,15 +27,15 @@ class frontPageEspnnews1 extends Controller_Front
 			}
 			$i++;
 		}
-		usbuilder()->vd($aData);
+		
 		$this->loopFetch($aData1);
 		
 	}
 	
 	public function rssContent($sCat)
 	{
-		require_once 'util/feed.php';
-		$getCurl = new EspnUtilFeed();
+	 	require_once 'util/feed.php';
+		$getCurl = new EspnUtilFeed(); 
 		$aCategory = $getCurl->category();
 	
 		foreach($aCategory as $key=>$val) {
@@ -51,8 +51,5 @@ class frontPageEspnnews1 extends Controller_Front
 		return $aNews;
 		
 	} 
-	
-		
 }
-
 

@@ -15,7 +15,7 @@ class adminPageSetup extends Controller_Admin
 		$this->category();
 		 
 		$this->importJS('espn.admin');
-		$this->importCSS('espn.admin');
+		$this->importCSS('espnnews.admin');
 		
 	    $this->View(__CLASS__);
 		

@@ -1,0 +1,5 @@
+@CHARSET "ISO-8859-1";
+
+.menu {height:70px;margin-top:3px;overflow-y:auto;overflow-x:hidden;}
+.move {padding-left:10px !important;}
+.move img {margin-right:2px;}

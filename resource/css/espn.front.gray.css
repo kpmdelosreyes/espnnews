@@ -1,9 +1,9 @@
 #pg_espn *{margin:0;padding:0;} 
 
-#pg_espn {background:url(../_sdk/img/espnnews/pg_espn_bg.jpg) no-repeat;width:100%}
+#pg_espn {background:url(../_sdk/img/espnnews/pg_espn_bg.jpg) no-repeat;width:100%;text-align:left}
 #pg_espn h1 {background:url(../_sdk/img/espnnews/pg_espn_bullet1.gif) no-repeat right;padding-right:10px;font-size:12px;color:#fff;font-family:Tahoma, sans-serif !important;height:34px;line-height:34px;margin-left:12px;display:inline;font-weight:bold;}
 
-.pg_espn_nav {margin-top:0px !important;margin-bottom:0 !important;display:inline-block}
+.pg_espn_nav {margin-top:10px !important;margin-bottom:0 !important;display:inline-block}
 .pg_espn_nav li {float:left;display:inline-block;height:22px}
 .pg_espn_nav li a {font-family: Arial, Helvetica, sans-serif;font-size:9px;text-decoration:none;height:20px;line-height:20px;display:inline-block;}
 .pg_espn_nav li a.off {width:80px;height:20px;line-height:20px;border:1px solid #e0e0e0;background:#ededed;display:inline-block;text-align:center;color:#999;}
@@ -14,9 +14,10 @@
 .pg_espn_content_wrap {width:100%;margin:10px 0 0 0px !important;overflow:hidden}
 .pg_espn_contentnews {float:left;width:100%}
 .pg_espn_contentnews li {text-align:left;list-style:none;float:left;width:100%;border-bottom:1px solid #e7e7e7;padding-bottom:10px !important;margin-bottom:5px !important;line-height:15px !important;}
-.pg_espn_contentnews li .pg_arrow_wrap {float:left;display:inline}
-.pg_espn_contentnews li img {float:left;margin-right:6px !important;margin-top:3px !important;width:9px;height:9px;}
-.pg_espn_contentnews li .pg_content {width:90%;font-size:11px;float:left;display:inline;color:#333;font-family: Arial, Helvetica, sans-serif;word-spacing:-1px;}
+.pg_espn_contentnews li span.btn_wrap {float:left;display:inline-block;width:9px;height:9px;margin-right:6px !important;}
+.pg_espn_contentnews li .plus {background:url(../_sdk/img/espnnews/pg_tree_p.gif) no-repeat left;display:inline-block;float:left;margin-top:3px !important;width:9px;height:9px;vertical-align:top}
+.pg_espn_contentnews li .minus {background:url(../_sdk/img/espnnews/pg_tree_m.gif) no-repeat left;display:inline-block;float:left;margin-top:3px !important;width:9px;height:9px;vertical-align:top}
+.pg_espn_contentnews li .pg_content {width:90%;font-size:11px;float:left;display:inline-block;color:#333;font-family: Arial, Helvetica, sans-serif;word-spacing:-1px;}
 .pg_espn_contentnews li .pg_content img {display:none}
 .pg_espn_contentnews li .pg_content_date {font-size:10px;color:#999;line-height:14px;}
 .pg_espn_contentnews li .pg_title {margin-bottom:3px !important}
@@ -25,5 +26,4 @@
 .pg_espn_contentnews li a.link01 {margin-left:15px !important;float:left;font-size:10px;color:#558de2;text-decoration:none;background:url(../_sdk/img/espnnews/pg_espn_bullet2.jpg) no-repeat right 5px;padding-right:7px !important;margin-right:5px !important;font-family: Arial, Helvetica, sans-serif;}
 
 #pg_espn_ajaxloader1 {text-align:center}
-
 a:visited { outline:0; }
