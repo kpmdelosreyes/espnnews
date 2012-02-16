@@ -4,11 +4,9 @@ class frontPageEspnnews3 extends Controller_Front
 	protected function run($aArgs)
 	{
 		require_once 'builder/builderInterface.php';
-		$sInitScript = usbuilder()->init($this->Request->getAppID(), $aArgs);
-		$this->writeJs($sInitScript);
-		
-		$connectDB = new modelSetup();
-		$aList = $connectDB->getData();
+		usbuilder()->init($this, $aArgs);
+
+		$aList = common()->modelContents()->getData();
 
 		$aData = $this->rssContent($aList['pespn_tab_3']);
 		$i = 1;

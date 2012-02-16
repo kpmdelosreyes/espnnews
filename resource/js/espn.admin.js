@@ -13,7 +13,7 @@ var adminPageSetup = {
 				document.espnnews_save.submit();
 			}
 			else{
-				oValidator.generalPurpose.getMessage(false, "Field(s) with asterisk(*) are mandatory.");
+				sdk_message.show('Field(s) with asterisk(*) are mandatory.', 'warning');
 			}
 			
 		},

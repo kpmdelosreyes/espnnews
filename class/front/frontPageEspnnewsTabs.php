@@ -4,11 +4,9 @@ class frontPageEspnnewsTabs extends Controller_Front
 	protected function run($aArgs)
 	{
 		require_once 'builder/builderInterface.php';
-		$sInitScript = usbuilder()->init($this->Request->getAppID(), $aArgs);
-		$this->writeJs($sInitScript);
+		usbuilder()->init($this, $aArgs);
 		
-		$connectDB = new modelSetup();
-		$aList = $connectDB->getData();
+		$aList = common()->modelContents()->getData();
 		$this->importJS('espn.front');
 		$this->importCSS('espn.front.gray');
 				

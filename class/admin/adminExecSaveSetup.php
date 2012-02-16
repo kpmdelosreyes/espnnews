@@ -6,16 +6,13 @@ class adminExecSaveSetup extends Controller_AdminExec
 	{
 		
 		require_once('builder/builderInterface.php');
-		$sInitScript = usbuilder()->init($this->Request->getAppID(), $aArgs);
-		$this->writeJs($sInitScript);
-		
-	
-		$oModelContents = new modelSetup();
-		$check = $oModelContents->getData();
+		usbuilder()->init($this, $aArgs);
+
+		$check = common()->modelContents()->getData();
 		
 		if($check)
 		{
-			$bResult = $oModelContents->updateContents($aArgs);
+			$bResult = common()->modelContents()->updateContents($aArgs);
 			
 			if ($bResult !== false) {
 				usbuilder()->message('Saved succesfully', 'success');
@@ -25,7 +22,7 @@ class adminExecSaveSetup extends Controller_AdminExec
 		}
 		else
 		{
-			$bResult = $oModelContents->insertContents($aArgs);
+			$bResult = common()->modelContents()->insertContents($aArgs);
 			
 			if ($bResult !== false) {
 				usbuilder()->message('Saved succesfully', 'success');
@@ -33,11 +30,9 @@ class adminExecSaveSetup extends Controller_AdminExec
 				usbuilder()->message('Save failed', 'warning');
 			}
 		}
-		
-	
-	
+			
 		$sUrl = usbuilder()->getUrl('adminPageSetup');
-		$sJsMove = usbuilder()->jsMove($sUrl);
-		$this->writeJS($sJsMove);
+		usbuilder()->jsMove($sUrl);
+		
 	}
 }

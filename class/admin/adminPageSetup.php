@@ -5,11 +5,9 @@ class adminPageSetup extends Controller_Admin
 	protected function run($aArgs)
 	{
 		require_once('builder/builderInterface.php');
-		$sInitScript = usbuilder()->init($this->Request->getAppID(), $aArgs);
-		$this->writeJs($sInitScript);
+		usbuilder()->init($this, $aArgs);
 		
-		$sFormScript = usbuilder()->getFormAction('espnnews_save','adminExecSaveSetup');
-		$this->writeJs($sFormScript);
+		usbuilder()->getFormAction('espnnews_save','adminExecSaveSetup');
 		
 		usbuilder()->validator(array('form' => 'espnnews_save'));
 		$this->category();
