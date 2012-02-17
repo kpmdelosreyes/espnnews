@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <application>
+<<<<<<< HEAD
     <langs support="en" default="en"></langs>
+=======
+    <langs use="kr" default="kr"></langs>
+>>>>>>> b012e5c22ca68b3f75f92d05cea53cf4660ca993
     <api use="off">
         <ifs>
         </ifs>
@@ -9,7 +13,24 @@
         <ifs>
             <if class="adminIndex" permission="off" desc="Sample Admin Interface"></if>
         </ifs>
+<<<<<<< HEAD
         <menus>
+=======
+        <menes>
+        </menus>
+    </admin>
+<application>
+    <langs use="" default=""></langs>
+    <api use="off">
+        <ifs>
+        </ifs>
+    </api>
+    <admin use="on" index="adminIndex">
+        <ifs>
+            <if class="adminIndex" permission="off" desc="Sample Admin Interface"></if>
+        </ifs>
+        <menes>
+>>>>>>> b012e5c22ca68b3f75f92d05cea53cf4660ca993
         </menus>
     </admin>
     <front use="on">
@@ -18,4 +39,8 @@
             </if>
         </ifs>
     </front>
+<<<<<<< HEAD
+=======
+    <installation db="off" html="off"></installation>
+>>>>>>> b012e5c22ca68b3f75f92d05cea53cf4660ca993
 </application>
