@@ -8,7 +8,9 @@ class adminExecSaveSetup extends Controller_AdminExec
 		require_once('builder/builderInterface.php');
 		usbuilder()->init($this, $aArgs);
 
-		$check = common()->modelContents()->getData();
+		$aOption['seq'] = $aArgs['seq'];
+		
+		$check = common()->modelContents()->getData($aOption);
 		
 		if($check)
 		{

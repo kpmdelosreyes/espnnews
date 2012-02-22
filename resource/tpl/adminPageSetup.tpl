@@ -40,6 +40,7 @@
         </tr>
         </table>
         <div id="pg_espn_init_values">
+        		<input type="hidden" name="seq" id="seq" value="<?php echo $seq; ?>" />
                 <input type="hidden" name="pg_espn_cat_sel_1" id="pg_espn_cat_sel_1" value="" />
                 <input type="hidden" name="pg_espn_cat_sel_2" id="pg_espn_cat_sel_2" value="" />
                 <input type="hidden" name="pg_espn_cat_sel_3" id="pg_espn_cat_sel_3" value="" />

@@ -7,6 +7,8 @@ class adminPageSetup extends Controller_Admin
 		require_once('builder/builderInterface.php');
 		usbuilder()->init($this, $aArgs);
 		
+		$aOption['seq'] = $aArgs['seq'];
+		
 		usbuilder()->getFormAction('espnnews_save','adminExecSaveSetup');
 		
 		usbuilder()->validator(array('form' => 'espnnews_save'));
@@ -15,6 +17,7 @@ class adminPageSetup extends Controller_Admin
 		$this->importJS('espn.admin');
 		$this->importCSS('espnnews.admin');
 		
+		$this->assign("seq" , $aOption['seq']);
 	    $this->View(__CLASS__);
 		
 	}
